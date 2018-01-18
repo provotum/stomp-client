@@ -1,6 +1,6 @@
 {
-  "name": "provotum-stompjs",
-  "version": "0.1.3",
+  "name": "provotum-stomp-client",
+  "version": "0.0.3",
   "description": "This is a node module wrapper for the browser version of stomp-js/stomp-websocket",
   "main": "index.js",
   "scripts": {
