@@ -88,13 +88,15 @@ function StompClient(host, service) {
      * @param endpoint The endpoint to which to subscribe. Relative to the host configured.
      * @param successCallback A callback called upon successful data retrieval. Will receive as first argument an object containing the response.
      * @param errorCallback A callback invoked if an invalid message is retrieved. Will receive as first argument the plain data.
+     *
+     * @return {object} The subscription.
      */
     function subscribe(endpoint, successCallback, errorCallback) {
         if (null === stompClient) {
             throw Error("Client must be configured before subscribing.");
         }
 
-        stompClient.subscribe(endpoint, function (data) {
+        return stompClient.subscribe(endpoint, function (data) {
             if (data.body) {
                 if (successCallback) {
                     successCallback(JSON.parse(data.body));
